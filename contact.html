@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head><style>
+h2{color: crimson;
+    font-family: "https://fonts.withgoogle.com/tilt";}
+body{
+    background-image:linear-gradient(rgb(108 ,15,15,0.85),rgba(108,15,15,0.85)) , url("workshop.jpg");
+    background-size: cover;}
+.text-block{
+  position: absolute;
+  height:450px;
+  width:80%;
+  bottom: 60px;
+  right: 20px;
+  left: 130px;
+  border: 2px solid #fff;
+  text-align: center;
+  background-size: 3rem 3rem;
+  background: linear-gradient(rgba(214, 209, 209, 0.63),rgba(211, 204, 204, 0.616));}
+  .navbar{ 
+    background-color: #f2f2f2; 
+    padding:10px;border-radius:40px;
+    margin-top:10px;
+}
+.navbar li{
+    margin-right: 10px;
+}
+.navbar ul{list-style-type: none;margin:0;padding:0;display: flex;}
+ul{
+    list-style-type: none;
+    margin-top: 25px;  
+    word-spacing: 20px;}
+.navbar li a{
+  font-family:Tahoma;
+    color: black;
+    border: 0.5px solid transparent;
+    transition: 0.6s ease;
+    font-size: 20px;
+    text-decoration:none;
+    padding:5px 25px;
+    text-align: center;
+  border-radius:40px}
+.navbar li a:hover{background-color: rgb(108 ,15,15,0.85); color: #fff;border-radius:40px}
+
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      padding:20px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    input,
+    textarea {
+        
+      width: 460px;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    textarea {
+      height: 150px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .success {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+    }
+
+    .error {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="aboutus.html">About</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="register1.php">Register</a></li>
+</ul>
+</nav> 
+  
+  <div class="container">
+    <h1>Contact Us</h1>
+    <form id="contactForm" action="send_email.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <input type="hidden" name="recipient" value="tanayaakkalkote18945@gmail.com">
+        <button type="submit">Send Message</button>
+      </form>
+
+    <div id="response" style="display: none;"></div>
+  </div>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var form = event.target;
+      var name = form.elements["name"].value;
+      var email = form.elements["email"].value;
+      var message = form.elements["message"].value;
+
+      // You can add your own logic here to handle the form submission,
+      // such as sending an email or saving the message to a database.
+
+      // For this example, we'll just display a success message.
+      var response = document.getElementById("response");
+      response.innerHTML = "Thank you, " + name + "! Your message has been sent.";
+      response.style.display = "block";
+      form.reset();
+    });
+  </script>
+</body>
+</html>
